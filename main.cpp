@@ -3,7 +3,11 @@
 #include <iomanip>
 #include <Windows.h>
 
+#include "functions.h"
+
 using namespace std;
+
+int hey = test;
 
 int main()
 {
@@ -13,9 +17,9 @@ int main()
     bool play = false;
 
     do {
-    cout << setw(width / 2);
+    cout << setw(width / 3);
     cout << "*************** THE SHIP TALE ***************" << endl;
-    cout << setw(width / 2);
+    cout << setw(width / 3);
     cout << "   Press 1 to play the game or 2 to Quit    " << endl;
     cin >> start;
     
@@ -48,7 +52,7 @@ int main()
     do {
     if (Yes == "yes" || Yes == "Yes" || Yes == "YES")
     {
-        return 0;
+        
     }
     else if(Yes == "no" || Yes == "No" || Yes == "NO")
     {
@@ -62,6 +66,15 @@ int main()
     }
     } while (Yes != "yes" && Yes != "Yes" && Yes != "YES");
 
+    cout << "\nOk, then." << endl;
+    cout << "\nYou wake up in your room, it is dark and you are all alone.";
+    cout << "\nYou can listen to the waves hitting the boat and the cracks of the wood";
+    cout << "\nYou feel a little dizzy and decide to take a glass of water at the kitchen.";
+    cout << "\nSo, you stand up from your unconfortable bed, turn the fire of the candle on and realize you went to sleep with your shoes.";
+
+    std::string mainQuestion = "\nWhat do you want to do?";
+    cout << mainQuestion;
+    cout << test;
 
     return 0;
 }
