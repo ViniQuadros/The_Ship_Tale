@@ -4,10 +4,9 @@
 #include <Windows.h>
 
 #include "functions.h"
+#include "functions.cpp"
 
 using namespace std;
-
-int hey = test;
 
 int main()
 {
@@ -31,9 +30,9 @@ int main()
         exit(1);
     }
     else{
-        cout << setw(width / 2);
+        cout << setw(width / 3);
         cout << "*************** THE SHIP TALE ***************" << endl;
-        cout << setw(width / 2);
+        cout << setw(width / 3);
         cout << "   Press 1 to play the game or 2 to Quit    " << endl;
         cin >> start;
     }
@@ -64,7 +63,7 @@ int main()
         cout << "ARE YOU READY OR NOT??" << endl;
         cin >> Yes;
     }
-    } while (Yes != "yes" && Yes != "Yes" && Yes != "YES");
+    } while (Yes != "yes" && Yes != "Yes" && Yes != "YES"); 
 
     cout << "\nOk, then." << endl;
     cout << "\nYou wake up in your room, it is dark and you are all alone.";
@@ -72,9 +71,10 @@ int main()
     cout << "\nYou feel a little dizzy and decide to take a glass of water at the kitchen.";
     cout << "\nSo, you stand up from your unconfortable bed, turn the fire of the candle on and realize you went to sleep with your shoes.";
 
-    std::string mainQuestion = "\nWhat do you want to do?";
+    std::string mainQuestion = "\nWhat do you want to do?\n";
     cout << mainQuestion;
-    cout << test;
+
+    Room();
 
     return 0;
 }
