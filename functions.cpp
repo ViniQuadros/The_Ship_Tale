@@ -5,7 +5,7 @@
 #include "functions.h"
 
 bool Room = true;
-bool Kitchen = false;
+bool Hallway = false;
 bool SeeKey = false;
 
 std::vector <std::string> inventory;
@@ -31,8 +31,11 @@ void Look()
         std::cout << "You can see the key of your room over the closet. It is old and rusty.\n";
         SeeKey = true;
     }
-    else if(Kitchen == true){
+    else if(Hallway == true){
 
+    }
+    else{
+        std::cout << "Nothing to look at.";
     }
 }
 
@@ -71,6 +74,11 @@ void Use(){
     }
     else if(HaveKey == true){
         std::cout << "You used the key to open the door!\n";
+        Room = false;
+        Hallway = true;
+    }
+    else{
+        std::cout << "You have nothing to use.";
     }
 
 }
