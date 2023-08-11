@@ -74,11 +74,11 @@ void Use(){
     }
     else if(HaveKey == true){
         std::cout << "You used the key to open the door!\n";
+        inventory.pull_back("Room Key");
         Room = false;
         Hallway = true;
     }
     else{
         std::cout << "You have nothing to use.";
     }
-
 }
