@@ -24,11 +24,14 @@ void Type() {
     case 3:
         Inventory();
         break;
+    case 4:
+        Use();
     default:
         cout << "Invalid Option\n";
         cout << mainQuestion;
+        Choose();
         cin >> writing;
-        Type();
+        Type();  
     }
 }
 }
@@ -93,15 +96,19 @@ int main()
     } while (Yes != "yes" && Yes != "Yes" && Yes != "YES");*/
 
     cout << "\nOk, then." << endl;
-    cout << "\nYou wake up in your room, it is dark and you are all alone.";
-    cout << "\nYou can listen to the waves hitting the boat and the cracks of the wood";
-    cout << "\nYou feel a little dizzy and decide to take a glass of water at the kitchen.";
-    cout << "\nSo, you stand up from your unconfortable bed, turn the fire of the candle on and realize you went to sleep with your shoes.";
 
-    cout << mainQuestion;
-    Choose();
-    cin >> writing;
-    Type();
+    while (Room == true)
+    {
+        cout << "\nYou wake up in your room, it is dark and you are all alone.";
+        cout << "\nYou can listen to the waves hitting the boat and the cracks of the wood";
+        cout << "\nYou feel a little dizzy and decide to take a glass of water at the kitchen.";
+        cout << "\nSo, you stand up from your unconfortable bed, turn the fire of the candle on and realize you went to sleep with your shoes.";
+
+        cout << mainQuestion;
+        Choose();
+        cin >> writing;
+        Type();
+    }
 
     return 0;
 }
