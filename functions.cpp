@@ -2,13 +2,17 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+
 #include "functions.h"
 
+
 bool Room = true;
-bool Kitchen = false;
+bool Hallway = false;
 bool SeeKey = false;
 
 std::vector <std::string> inventory;
+int writing;
+std::string mainQuestion = "\nWhat do you want to do?\n";
 
 void Choose()
 {
@@ -31,8 +35,11 @@ void Look()
         std::cout << "You can see the key of your room over the closet. It is old and rusty.\n";
         SeeKey = true;
     }
-    else if(Kitchen == true){
+    else if(Hallway == true){
 
+    }
+    else{
+        std::cout << "\nNothing to look at.\n";
     }
 }
 
@@ -41,12 +48,13 @@ void Take(){
     if(Room == true && SeeKey == true){
         std::cout << "You took the key to your room\n";
         inventory.push_back("Room Key");
-        std::cout << "You have " << inventory[0] << std::endl << std::endl;
+        std::cout << "You have " << inventory[0] << std::endl;
 
-        bool HaveKey = true;
+        SeeKey = false;
+        HaveKey = true;
     }
     else{
-        std::cout <<"You see nothing to take.";
+        std::cout <<"\nYou see nothing to take.\n";
     }
 }
 
@@ -61,16 +69,45 @@ void Inventory(){
     }
 }
 
+void Type2() {
+    if(Hallway == false){
+        switch (writing)
+        {
+        case 1:
+            Look();
+            break;
+        case 2:
+            Take();
+            break;
+        case 3:
+            Inventory();
+            break;
+        default:
+            std::cout << "Invalid Option\n";
+            std::cout << mainQuestion;
+            Choose();
+            std::cin >> writing;
+            Type2();  
+        }
+    }
+}
+
 void Use(){
     if(inventory.empty()){
         std::cout << "Invalid Option\n";
         std::cout << mainQuestion;
         Choose();
         std::cin >> writing;
-        Type(); 
+        Type2(); 
     }
     else if(HaveKey == true){
         std::cout << "You used the key to open the door!\n";
+        inventory.pop_back();
+        Room = false;
+        HaveKey = false;
+        Hallway = true;
     }
-
+    else{
+        std::cout << "\nYou have nothing to use.\n";
+    }
 }
