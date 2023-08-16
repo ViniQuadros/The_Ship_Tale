@@ -11,47 +11,28 @@
 using namespace std;
 
 void Type() {
-    if(Hallway == false){
-        switch (writing)
-        {
-        case 1:
-            Look();
-            break;
-        case 2:
-            Take();
-            break;
-        case 3:
-            Inventory();
-            break;
-        case 4:
-            Use();
-        default:
-            cout << "Invalid Option\n";
-            cout << mainQuestion;
-            Choose();
-            cin >> writing;
-            Type();  
-        }
+{
+    switch (writing)
+    {
+    case 1:
+        Look();
+        break;
+    case 2:
+        Take();
+        break;
+    case 3:
+        Inventory();
+        break;
+    case 4:
+        Use();
+    default:
+        cout << "Invalid Option\n";
+        cout << mainQuestion;
+        Choose();
+        cin >> writing;
+        Type();  
     }
-    /*else{
-        switch (writing)
-        {
-        case 1:
-            Left();
-            Hallway = false;
-            break;
-        case 2:
-            Right();
-            Hallway = false;
-            break;
-        default:
-            cout << "Invalid Option\n";
-            cout << mainQuestion;
-            Choose();
-            cin >> writing;
-            Type();  
-        }  
-    }*/
+}
 }
 
 int main()
@@ -131,18 +112,5 @@ int main()
         Type();
     }
 
-        while (Hallway == true)
-    {
-        cout << "\nYou open the door and face an empty big corridor going to the left and right.";
-        cout << "\nThere are some lights in the dirty walls, but you can't see a long distance.";
-        cout << "\nYou try to remember where the thing in the ship are located, because the captain told you yesterday.";
-        cout << "\nBut you fail and you are not sure where to go.";
-
-        cout << mainQuestion;
-        cout << "Choose: [1] Go Left\n";
-        cout << "        [2] Go Right\n";
-        cin >> writing;
-        break;
-    }
     return 0;
 }

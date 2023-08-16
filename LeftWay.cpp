@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <iostream>
 
 int HP = 100;
@@ -12,7 +11,6 @@ void Left(){
 
     std::cout << "You entered the kitchen."
     std::cout << "You entered a nightmare";
-=======
 #include <iostream>
 
 int HP = 100;
@@ -26,5 +24,4 @@ void Left(){
 
     std::cout << "You entered the kitchen."
     std::cout << "You entered a nightmare";
->>>>>>> 1c8c846ec8e179b8ef77850156a76e9f6bb4301f
 }
