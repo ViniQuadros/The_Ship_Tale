@@ -39,7 +39,11 @@ void Look()
 
     }
     else{
+<<<<<<< HEAD
         std::cout << "\nNothing to look at.\n";
+=======
+        std::cout << "Nothing to look at.";
+>>>>>>> 1c8c846ec8e179b8ef77850156a76e9f6bb4301f
     }
 }
 
@@ -102,6 +106,7 @@ void Use(){
     }
     else if(HaveKey == true){
         std::cout << "You used the key to open the door!\n";
+<<<<<<< HEAD
         inventory.pop_back();
         Room = false;
         HaveKey = false;
@@ -109,5 +114,13 @@ void Use(){
     }
     else{
         std::cout << "\nYou have nothing to use.\n";
+=======
+        inventory.pull_back("Room Key");
+        Room = false;
+        Hallway = true;
+    }
+    else{
+        std::cout << "You have nothing to use.";
+>>>>>>> 1c8c846ec8e179b8ef77850156a76e9f6bb4301f
     }
 }
