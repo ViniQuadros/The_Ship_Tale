@@ -3,36 +3,53 @@
 #include <iomanip>
 #include <Windows.h>
 
-#include "functions.h"
 #include "functions.cpp"
-/*#include "RightWay.cpp"
-#include "LefWay.cpp"*/
+#include "functions.h"
+#include "RightWay.cpp"
+#include "LeftWay.cpp"
 
 using namespace std;
 
 void Type() {
-{
-    switch (writing)
-    {
-    case 1:
-        Look();
-        break;
-    case 2:
-        Take();
-        break;
-    case 3:
-        Inventory();
-        break;
-    case 4:
-        Use();
-    default:
-        cout << "Invalid Option\n";
-        cout << mainQuestion;
-        Choose();
-        cin >> writing;
-        Type();  
+    if (Room == true){
+        switch (writing)
+        {
+        case 1:
+            Look();
+            break;
+        case 2:
+            Take();
+            break;
+        case 3:
+            Inventory();
+            break;
+        case 4:
+            Use();
+            break;
+        default:
+            cout << "Invalid Option\n";
+            cout << mainQuestion;
+            Choose();
+            cin >> writing;
+            Type();  
+        }
     }
 }
+
+void Corridor(){
+        switch (writing)
+        {
+        case 1:
+            cout << "You decided to go left.\n";
+            Left();
+            break;
+        case 2:
+            cout << "You decided to go right";
+            Right();
+            break;
+        default:
+            break;
+        }
 }
 
 int main()
@@ -95,9 +112,9 @@ int main()
         cout << "ARE YOU READY OR NOT??" << endl;
         cin >> Yes;
     }
-    } while (Yes != "yes" && Yes != "Yes" && Yes != "YES");*/
+    } while (Yes != "yes" && Yes != "Yes" && Yes != "YES");
 
-    cout << "\nOk, then." << endl;
+    cout << "\nOk, then." << endl;*/
 
     while (Room == true)
     {
@@ -111,6 +128,12 @@ int main()
         cin >> writing;
         Type();
     }
+
+    cout << "\nHallway description\n";
+    cout << "Choose: [1] Left\n";
+    cout << "        [2] Right\n";
+    cin >> writing;
+    Corridor();
 
     return 0;
 }

@@ -1,22 +1,42 @@
-<<<<<<< HEAD
 #include <iostream>
+#include <random>
 
-int HP = 100;
-/* Adicionar sistema de combate*/
+#include "functions.cpp"
+
+/* Adicionar sistema de combate
+
+class Weapons
+{
+private:
+
+public:
+    int Damage;
+    std::string name = "Sword";
+};
+
+int Weapons::weaponsDamage(int Damage) {
+    Weapons Sword;
+    Weapons Axe;
+
+    Sword.Damage = 10;
+    Axe.Damage = 12;
+
+
+    return Damage;
+}
+
+class character
+{
+private:
+  
+public:
+  int HP = 100;
+};*/
+
 void Right(){
-    std::cout << "\nYou walk for a .\n";
 
-    std::cout << "";
-
-=======
-#include <iostream>
-
-int HP = 100;
-/* Adicionar sistema de combate*/
-void Right(){
-    std::cout << "\nYou walk for a .\n";
-
-    std::cout << "";
-
->>>>>>> 1c8c846ec8e179b8ef77850156a76e9f6bb4301f
+    std::cout << "\nYou walk for a second and get closer to a dead body.\n";
+    std::cout << "There is blood all around the man\n";
+    std::cout << "Next to him is an AXE and a SWORD\n";
+    std::cout << "You don't know what happended here.\n";
 }

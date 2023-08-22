@@ -5,13 +5,13 @@
 
 #include "functions.h"
 
+int writing;
 
 bool Room = true;
 bool Hallway = false;
 bool SeeKey = false;
 
 std::vector <std::string> inventory;
-int writing;
 std::string mainQuestion = "\nWhat do you want to do?\n";
 
 void Choose()
@@ -35,15 +35,8 @@ void Look()
         std::cout << "You can see the key of your room over the closet. It is old and rusty.\n";
         SeeKey = true;
     }
-    else if(Hallway == true){
-
-    }
     else{
-<<<<<<< HEAD
         std::cout << "\nNothing to look at.\n";
-=======
-        std::cout << "Nothing to look at.";
->>>>>>> 1c8c846ec8e179b8ef77850156a76e9f6bb4301f
     }
 }
 
@@ -97,30 +90,18 @@ void Type2() {
 }
 
 void Use(){
-    if(inventory.empty()){
-        std::cout << "Invalid Option\n";
-        std::cout << mainQuestion;
-        Choose();
-        std::cin >> writing;
-        Type2(); 
-    }
-    else if(HaveKey == true){
+    if(HaveKey == true){
         std::cout << "You used the key to open the door!\n";
-<<<<<<< HEAD
         inventory.pop_back();
         Room = false;
         HaveKey = false;
         Hallway = true;
     }
-    else{
+    else if(inventory.empty()){
         std::cout << "\nYou have nothing to use.\n";
-=======
-        inventory.pull_back("Room Key");
-        Room = false;
-        Hallway = true;
-    }
-    else{
-        std::cout << "You have nothing to use.";
->>>>>>> 1c8c846ec8e179b8ef77850156a76e9f6bb4301f
+        std::cout << mainQuestion;
+        Choose();
+        std::cin >> writing;
+        Type2(); 
     }
 }

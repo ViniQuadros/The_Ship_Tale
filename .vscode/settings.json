@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    "*.embeddedhtml": "html",
     "iostream": "cpp",
     "atomic": "cpp",
     "bit": "cpp",
@@ -52,7 +53,21 @@
     "string": "cpp",
     "unordered_map": "cpp",
     "vector": "cpp",
-    "xhash": "cpp"
+    "xhash": "cpp",
+    "array": "cpp",
+    "*.tcc": "cpp",
+    "cstdarg": "cpp",
+    "cwctype": "cpp",
+    "deque": "cpp",
+    "algorithm": "cpp",
+    "functional": "cpp",
+    "memory_resource": "cpp",
+    "numeric": "cpp",
+    "optional": "cpp",
+    "random": "cpp",
+    "string_view": "cpp",
+    "numbers": "cpp",
+    "sstream": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "C_Cpp_Runner.msvcBatchPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat",
