@@ -3,14 +3,13 @@
 #include <iomanip>
 #include <Windows.h>
 
-#include "functions.cpp"
-#include "functions.h"
+#include "main.h"
 #include "RightWay.cpp"
 #include "LeftWay.cpp"
 
 using namespace std;
 
-void Type() {
+void Type(){
     if (Room == true){
         switch (writing)
         {
@@ -40,11 +39,11 @@ void Corridor(){
         switch (writing)
         {
         case 1:
-            cout << "You decided to go left.\n";
+            cout << "\nYou decided to go left.\n";
             Left();
             break;
         case 2:
-            cout << "You decided to go right";
+            cout << "\nYou decided to go right";
             Right();
             break;
         default:
@@ -57,7 +56,6 @@ int main()
     /*int width = GetSystemMetrics(SM_CYSCREEN);
     std::string name;
     char start;
-    bool play = false;
 
     do {
     cout << setw(width / 3);
@@ -114,7 +112,7 @@ int main()
     }
     } while (Yes != "yes" && Yes != "Yes" && Yes != "YES");
 
-    cout << "\nOk, then." << endl;*/
+    cout << "\nOk, then." << endl;
 
     while (Room == true)
     {
@@ -127,9 +125,11 @@ int main()
         Choose();
         cin >> writing;
         Type();
-    }
+    }*/
 
-    cout << "\nHallway description\n";
+    cout << "\nThe hallway is way bigger than you remembered\n";
+    cout << "It looks like you don't belong in here.\n";
+    cout << "There are two paths to follow to see where you go to. Left or Right. Where will you go?\n";
     cout << "Choose: [1] Left\n";
     cout << "        [2] Right\n";
     cin >> writing;

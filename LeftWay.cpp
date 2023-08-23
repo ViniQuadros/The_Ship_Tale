@@ -1,15 +1,14 @@
 #include <iostream>
 
-/*Fazer um sistema de RPG, com dados e valores aleatÃ³rio,
-  NÃ£o Ã© possÃ­vel se defender, apenas se esconder.
+/*Fazer um sistema de RPG, com dados e valores aleatório,
+  Não é possível se defender, apenas se esconder.*/
 
-class character
-{
+class characterLeft{
 private:
   
 public:
   int HP = 100;
-};*/
+};
 
 
 void Left(){
