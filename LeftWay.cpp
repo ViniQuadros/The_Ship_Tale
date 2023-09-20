@@ -1,7 +1,7 @@
 #include <iostream>
 
-/*Fazer um sistema de RPG, com dados e valores aleatório,
-  Não é possível se defender, apenas se esconder.*/
+/*Fazer um sistema de RPG, com dados e valores aleatÃ³rio,
+  Nï¿½o ï¿½ possï¿½vel se defender, apenas se esconder.*/
 
 class characterLeft{
 private:
@@ -13,7 +13,7 @@ public:
 
 void Left(){
   std::cout << "\nYou start to to walk in the long corridor.\n";
-  std::cout << "You see duzens of doors that belong to other travelers\n";
+  std::cout << "You see dozens of doors that belong to other travelers\n";
   std::cout << "It is possible to hear the snors of all the drunkers inside their Rooms.\n";
   std::cout << "But after a short walk, you get to the kitchen of the ship.\n\n";
 

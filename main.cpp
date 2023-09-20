@@ -4,8 +4,6 @@
 #include <Windows.h>
 
 #include "main.h"
-#include "RightWay.cpp"
-#include "LeftWay.cpp"
 
 using namespace std;
 
@@ -35,38 +33,45 @@ void Type(){
     }
 }
 
-void Corridor(){
-        switch (writing)
-        {
-        case 1:
-            cout << "\nYou decided to go left.\n";
-            Left();
-            break;
-        case 2:
-            cout << "\nYou decided to go right";
-            Right();
-            break;
-        default:
-            break;
-        }
+void Corridor()
+{
+    switch (writing)
+    {
+    case 1:
+        std::cout << "\nYou decided to go left.\n";
+        Left();
+        break;
+    case 2:
+        std::cout << "\nYou decided to go right";
+        Right();
+        break;
+    default:
+        break;
+    }
 }
 
 int main()
 {
-    /*int width = GetSystemMetrics(SM_CYSCREEN);
+    int width = GetSystemMetrics(SM_CYSCREEN);
     std::string name;
     char start;
 
+    Weapons Axe;
+    Axe.WeaponDamage = 12;
+    
+    Weapons Sword;
+    Sword.WeaponDamage = 10;
+
     do {
-    cout << setw(width / 3);
+    cout << setw(width / 2);
     cout << "*************** THE SHIP TALE ***************" << endl;
-    cout << setw(width / 3);
+    cout << setw(width / 2);
     cout << "Instructions: " << endl;
-    cout << "Press 1 to "Look""; << endl;
-    cout << "Press 2 to "Take""; << endl;
-    cout << "Press 3 to "Check Inventory""; << endl;
-    cout << "Press 4 to "Use items""; << endl;
-    cout << "   Press p to play the game or q to Quit    " << endl;
+    cout << "Press 1 to 'Look'" << endl;
+    cout << "Press 2 to 'Take'" << endl;
+    cout << "Press 3 to 'Check Inventory'" << endl;
+    cout << "Press 4 to 'Use items'" << endl;
+    cout << "Press P to play the game or Q to Quit    " << endl;
     cin >> start;
     
     if(start == 'p')
@@ -125,7 +130,7 @@ int main()
         Choose();
         cin >> writing;
         Type();
-    }*/
+    }
 
     cout << "\nThe hallway is way bigger than you remembered\n";
     cout << "It looks like you don't belong in here.\n";
