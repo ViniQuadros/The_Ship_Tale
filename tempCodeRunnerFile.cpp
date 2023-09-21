@@ -1,2 +1,5 @@
-int writing;
-std::string mainQuestion = "\nWhat do you want to do?\n";
+    while (writing != 1 || writing != 2)
+    {
+        Corridor();
+        cin >> writing;
+    }

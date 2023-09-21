@@ -7,8 +7,10 @@
 
 using namespace std;
 
-void Type(){
-    if (Room == true){
+void Type()
+{
+    if (Room == true)
+    {
         switch (writing)
         {
         case 1:
@@ -28,7 +30,7 @@ void Type(){
             cout << mainQuestion;
             Choose();
             cin >> writing;
-            Type();  
+            Type();
         }
     }
 }
@@ -46,6 +48,7 @@ void Corridor()
         Right();
         break;
     default:
+        std::cout << "\nInvalid Option\n";
         break;
     }
 }
@@ -56,13 +59,7 @@ int main()
     std::string name;
     char start;
 
-    Weapons Axe;
-    Axe.WeaponDamage = 12;
-    
-    Weapons Sword;
-    Sword.WeaponDamage = 10;
-
-    do {
+    /*do {
     cout << setw(width / 2);
     cout << "*************** THE SHIP TALE ***************" << endl;
     cout << setw(width / 2);
@@ -73,7 +70,7 @@ int main()
     cout << "Press 4 to 'Use items'" << endl;
     cout << "Press P to play the game or Q to Quit    " << endl;
     cin >> start;
-    
+
     if(start == 'p')
     {
         play = true;
@@ -96,14 +93,14 @@ int main()
     cout << "Nice to meet you, " << name << ".\n";
     cout << "I will explain a situation and you will tell me what you will do according to the situation, ok?" << endl;
     cout << "Are you ready? Type YES to continue." << endl;
-    
+
     std::string Yes;
     cin >> Yes;
 
     do {
     if (Yes == "yes" || Yes == "Yes" || Yes == "YES")
     {
-        
+
     }
     else if(Yes == "no" || Yes == "No" || Yes == "NO")
     {
@@ -130,7 +127,7 @@ int main()
         Choose();
         cin >> writing;
         Type();
-    }
+    }*/
 
     cout << "\nThe hallway is way bigger than you remembered\n";
     cout << "It looks like you don't belong in here.\n";
@@ -138,7 +135,11 @@ int main()
     cout << "Choose: [1] Left\n";
     cout << "        [2] Right\n";
     cin >> writing;
-    Corridor();
+    while (writing != 1 || writing != 2)
+    {
+        Corridor();
+        cin >> writing;
+    }
 
     return 0;
 }

@@ -18,19 +18,23 @@ bool deadMan = false;
 bool SeeKey = false;
 bool encounter = false;
 bool HaveKey = false;
+bool runaway = false;
 
 std::vector<std::string> inventory;
 std::string mainQuestion = "\nWhat do you want to do?\n";
 
-class Character {
+class Character
+{
 public:
-int HP = 100;
-    std::string name;
+    int HP = 100;
+
 };
 
-class Weapons {
+class Enemy
+{
 public:
-    int WeaponDamage;
+    int enemyLife;
+    int enemyDamage;
 };
 
 void Choose()
@@ -70,8 +74,8 @@ void LookR()
         std::cout << "His dark clothes are all teared, with blood on it.\n";
         std::cout << "His left leg is broken, the bones ripping the flesh\n";
         std::cout << "But the most unsettling thing for you is that he has no jaw.\n";
-        std::cout << "Maybe it was done by a human... maybe not.\n\n";
-        std::cout << "You see a shiny object next to the hand of the dead man. You took GOLDEN COIN.\n";
+        std::cout << "Maybe it was done by a human... maybe not.\n";
+        std::cout << "You see a shiny object next to the hand of the dead man. You took GOLDEN COIN.\n\n";
         inventory.push_back("Golden Coin");
     }
     else
@@ -93,9 +97,19 @@ void Take()
     }
     else if (encounter == true)
     {
-        inventory.push_back("Axe");
+        switch (writingR)
+        {
+        case 1:
+            inventory.push_back("Axe");
+            break;
+        case 2:
+            inventory.push_back("Sword");
+        default:
+            break;
+        }
     }
-    else{
+    else
+    {
         std::cout << "You have nothing to take\n";
     }
 }
@@ -175,6 +189,46 @@ void Choice()
             std::cout << "You decide not to care about the dead man in front of you.\n";
             break;
         default:
+            std::cout << "Invalid Option.\n";
+            break;
+        }
+    }
+}
+
+void Fight()
+{
+    bool fight = true;
+
+    Character Player;
+    Player.HP;
+
+    Enemy Monster1;
+    Monster1.enemyDamage = 8;
+    Monster1.enemyLife = 20;
+
+    while (fight == true || Player.HP > 0 || Monster1.enemyDamage > 0)
+    {
+        int danoPersonagem1 = rand() % ataquePersonagem1;
+        Player.HP -= Monster1.enemyDamage;
+        std::cout << "You received " << danoPersonagem1 << " damage." << std::endl;
+
+        // Verificar se o Personagem 2 morreu após o ataque
+        if (Player.HP <= 0)
+        {
+            std::cout << "GameOver" << std::endl;
+            return 0;
+            break;
+        }
+
+        // Personagem 2 ataca o Personagem 1
+        int danoPersonagem2 = rand() % ataquePersonagem2;
+        vidaPersonagem1 -= danoPersonagem2;
+        std::cout << "Your attack gave " << danoPersonagem2 << " damage." << std::endl;
+
+        // Verificar se o Personagem 1 morreu após o ataque
+        if (Monster1.enemyLife <= 0)
+        {
+            std::cout << "You defeated the enemy!" << std::endl;
             break;
         }
     }
@@ -189,8 +243,12 @@ void Right()
     std::cout << "You don't know what happended here.\n";
     std::cout << "Choose: [1] Look Closely\n";
     std::cout << "        [2] Keep Going\n";
-    std::cin >> writingR;
-    Choice();
+
+    while (writingR != 1 || writingR != 2)
+    {
+        Choice();
+        std::cin >> writingR;
+    }
 
     std::cout << "As soon as you decide to get away from the body, you listen to a noise.\n";
     std::cout << "Footsteps.\n";
@@ -198,8 +256,10 @@ void Right()
     std::cout << "A creature with elongated limbs, pallid skin stretched taut over bony features, and sunken, hollow eyes that seem to absorb all light.";
 
     std::cout << mainQuestion;
+
     deadMan = false;
     encounter = true;
+
     std::cout << "Choose: [1] Take Axe and fight\n";
     std::cout << "        [2] Take Sword and fight\n";
     std::cout << "        [3] Escape\n\n\n";
@@ -211,9 +271,10 @@ void Right()
     else
     {
         std::cout << "You ran away\n";
+        runaway = true;
     }
 
-    std::cout << "Your items: " << std::endl;
+    /*std::cout << "Your items: " << std::endl;
     for (unsigned int i = 0; i < inventory.size(); i++)
-        std::cout << inventory[i] << std::endl;
+        std::cout << inventory[i] << std::endl;*/
 }
